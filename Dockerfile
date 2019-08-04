@@ -9,11 +9,14 @@ ADD pip.conf /etc/pip.conf
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir Django==${version}
 
-WORKDIR /home/
+RUN groupadd -r django && useradd --no-log-init -r -m -g django django
+USER django
+
+WORKDIR /home/django
 
 RUN django-admin startproject website
 
-WORKDIR /home/website
+WORKDIR /home/django/website
 
 RUN python manage.py migrate
 
@@ -23,5 +26,4 @@ CMD python manage.py runserver 0.0.0.0:8000
 
 EXPOSE 8000
 
-VOLUME /home/website
-
+VOLUME /home/django
