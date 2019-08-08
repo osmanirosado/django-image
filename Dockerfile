@@ -17,7 +17,9 @@ RUN pip install --no-cache-dir Django==${version}
 # -m To create the user's home directory
 # -g To specify the group name of the user's initial login group
 # -l Do not log init, following a recomendation of docker documentation
-RUN groupadd -r django && useradd -l -r -m -g django django
+# -g Use 1000 as group's ID to match debian systems default group's ID. 
+# -u Use 1000 as user's ID to match debian systems default user's ID.
+RUN groupadd -r -g 1000 django && useradd -l -r -m -u 1000 -g django django
 
 # Change to user django
 USER django
