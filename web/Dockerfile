@@ -3,7 +3,6 @@ FROM python:3.8-alpine
 ENV PYTHONUNBUFFERED 1
 
 # Install project requirements
-COPY pip.conf /etc/pip.conf
 COPY requirements.txt /root
 RUN pip install --no-cache-dir -r /root/requirements.txt
 
