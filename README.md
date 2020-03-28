@@ -38,5 +38,6 @@ docker save django-image_web -o django-image_web.tar
 
 ## References
 
+- [How to get Django](https://www.djangoproject.com/download/)
 - [Quickstart: Compose and Django](https://docs.docker.com/compose/django/)
 - [Running a Docker container as a non-root user](https://medium.com/redbubble/running-a-docker-container-as-a-non-root-user-7d2e00f8ee15)
