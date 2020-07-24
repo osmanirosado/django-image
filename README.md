@@ -2,7 +2,7 @@
 
 A simple Docker configuration to create Django examples.
 
-## Fisrt steps
+## First steps
 
 Start a Django project with name mysite. You can use a different name.
 
