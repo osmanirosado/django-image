@@ -6,11 +6,11 @@ ENV PYTHONUNBUFFERED 1
 COPY requirements.txt /root
 RUN pip install --no-cache-dir -r /root/requirements.txt
 
-# Create the project directory
-RUN mkdir -p /home/django/project
+# Create the code directory
+RUN mkdir -p /home/django/code
 
 # Copy project code into container
-COPY . /home/django/project
+COPY . /home/django/code
 
 # Change to project directory
-WORKDIR /home/django/project
+WORKDIR /home/django/code
