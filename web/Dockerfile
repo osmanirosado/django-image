@@ -27,3 +27,6 @@ COPY --chown=django:django . code
 
 # Change to code directory
 WORKDIR code
+
+# Define a volume for code directory
+VOLUME code
